@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="TODO.APP.AddTask"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TODO.APP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="TODO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Add Task" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="83*"/>
+                <RowDefinition Height="83*"/>
+                <RowDefinition Height="73*"/>
+                <RowDefinition Height="91*"/>
+                <RowDefinition Height="172*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="342" PlaceholderText="Task Title"/>
+            <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Margin="10,9.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="342" PlaceholderText="Description"/>
+            <Button x:Name="btnAdd" Content="Submit" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="342"/>
+            <CheckBox x:Name="chComplete" Content="Complete?" HorizontalAlignment="Left" Margin="10,6.833,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="0.017,0.599" Width="342"/>
+            <Grid HorizontalAlignment="Left" Height="73" Margin="0" Grid.Row="2" VerticalAlignment="Top" Width="362">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="215*"/>
+                    <ColumnDefinition Width="147*"/>
+                </Grid.ColumnDefinitions>
+                <DatePicker x:Name="dpDueDate" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="193"/>
+                <TimePicker x:Name="tpDueTime" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="119" Grid.Column="1"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
