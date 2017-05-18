@@ -38,7 +38,7 @@
             </Grid.RowDefinitions>
             <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="342" PlaceholderText="Task Title"/>
             <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Margin="10,9.667,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="342" PlaceholderText="Description"/>
-            <Button x:Name="btnAdd" Content="Submit" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="342"/>
+            <Button x:Name="btnAdd" Content="Submit" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="342" Click="btnAdd_Click"/>
             <CheckBox x:Name="chComplete" Content="Complete?" HorizontalAlignment="Left" Margin="10,6.833,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="0.017,0.599" Width="342"/>
             <Grid HorizontalAlignment="Left" Height="73" Margin="0" Grid.Row="2" VerticalAlignment="Top" Width="362">
                 <Grid.ColumnDefinitions>

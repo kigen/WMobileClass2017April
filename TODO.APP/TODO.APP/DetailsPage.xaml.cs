@@ -99,13 +99,24 @@ namespace TODO.APP
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
+            MyTask task = e.Parameter as MyTask;
+            LoadView(task);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedFrom(e);
         }
-
         #endregion
+
+
+        void LoadView(MyTask task)
+        {
+            tbTitle.Text = task.Title;
+            tbDescription.Text = task.Description;
+            tbDate.Text = task.DueDate;
+            tbComplete.Text = task.Complete ? "Complete" : "InComplete";
+        }
+
     }
 }

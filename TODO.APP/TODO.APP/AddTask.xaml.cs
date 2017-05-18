@@ -107,5 +107,31 @@ namespace TODO.APP
         }
 
         #endregion
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+            string title = txtTitle.Text;
+            string description = txtDescription.Text;
+            string dueDate = dpDueDate.Date.ToString();
+            string dueTime = tpDueTime.Time.ToString();
+            bool isComplete = chComplete.IsChecked.Value;*/
+
+            /*Task task  = new Task();
+            task.Title = txtTitle.Text;
+            task.Description = txtDescription.Text;
+            task.DueDate = dpDueDate.Date.ToString();
+            task.Complete = chComplete.IsChecked.Value;*/
+
+            MyTask task = new MyTask
+            {
+                Title = txtTitle.Text,
+                Description = txtDescription.Text,
+                DueDate = dpDueDate.Date.ToString(),
+                Complete = chComplete.IsChecked.Value
+            };
+
+            Frame.Navigate(typeof (DetailsPage), task);
+        }
     }
 }

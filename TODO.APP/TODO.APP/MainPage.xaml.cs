@@ -108,9 +108,10 @@ namespace TODO.APP
 
         #endregion
 
-        private void txtMyName_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof (AddTask));
         }
     }
 }

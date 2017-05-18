@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.BottomAppBar>
         <CommandBar Foreground="#FF0012FF" Background="#FF14F6E0">
-            <AppBarButton x:Name="btnAdd" Label="Add" Icon="Add"/>
+            <AppBarButton x:Name="btnAdd" Label="Add" Icon="Add" Click="btnAdd_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
