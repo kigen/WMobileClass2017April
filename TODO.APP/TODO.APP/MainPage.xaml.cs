@@ -27,6 +27,7 @@ namespace TODO.APP
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+     
 
         public MainPage()
         {
@@ -35,6 +36,7 @@ namespace TODO.APP
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+ 
         }
 
         /// <summary>
@@ -99,6 +101,12 @@ namespace TODO.APP
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
+            App app = Application.Current as App;
+            if (app != null)
+            {
+                // Display the list of tasks in the listview.
+                TaskListView.ItemsSource = app.Tasks;
+            }
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -108,10 +116,24 @@ namespace TODO.APP
 
         #endregion
 
-
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof (AddTask));
+        }
+
+        private void TaskListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void TaskListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.OriginalSource != null)
+            {
+                MyTask task = e.OriginalSource as MyTask;
+                //Pass the task object for display in Details Page. 
+                Frame.Navigate(typeof (DetailsPage), task);
+            }
         }
     }
 }

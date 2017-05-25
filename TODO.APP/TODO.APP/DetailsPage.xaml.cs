@@ -109,13 +109,9 @@ namespace TODO.APP
         }
         #endregion
 
-
         void LoadView(MyTask task)
         {
-            tbTitle.Text = task.Title;
-            tbDescription.Text = task.Description;
-            tbDate.Text = task.DueDate;
-            tbComplete.Text = task.Complete ? "Complete" : "InComplete";
+            DataContext = task;
         }
 
     }

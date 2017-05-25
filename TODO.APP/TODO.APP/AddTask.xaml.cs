@@ -131,7 +131,12 @@ namespace TODO.APP
                 Complete = chComplete.IsChecked.Value
             };
 
-            Frame.Navigate(typeof (DetailsPage), task);
+            App app = Application.Current as App;
+            if (app != null)
+            {
+                app.Tasks.Add(task);
+            }
+            Frame.GoBack();
         }
     }
 }

@@ -6,9 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="White">
     <Page.BottomAppBar>
-        <CommandBar Foreground="#FF0012FF" Background="#FF14F6E0">
+        <CommandBar Foreground="White" Background="Black">
             <AppBarButton x:Name="btnAdd" Label="Add" Icon="Add" Click="btnAdd_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
@@ -28,8 +28,8 @@
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock Text="TODO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
-            <TextBlock Text="My Tasks" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+            <TextBlock Text="TODO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" Foreground="Black"/>
+            <TextBlock Text="My Tasks" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" Foreground="Black"/>
         </StackPanel>
 
         <!--TODO: Content should be placed within the following grid-->
@@ -38,6 +38,23 @@
                 <StackPanel.RenderTransform>
                     <CompositeTransform/>
                 </StackPanel.RenderTransform>
+                <ListView Height="503" Name="TaskListView" Foreground="Black" ItemClick="TaskListView_ItemClick" SelectionChanged="TaskListView_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="470" Height="100">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="381*"/>
+                                    <ColumnDefinition Width="89*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel HorizontalAlignment="Left" Height="100" Margin="10,0,0,0" VerticalAlignment="Top" Width="361">
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Title}" FontSize="{StaticResource TextStyleExtraLargeFontSize}" Foreground="Black" FontFamily="Segoe WP" Margin="0,10,-0.167,0"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding DueDate}" FontSize="{StaticResource TextStyleLargeFontSize}" Foreground="Black" FontFamily="Segoe WP" VerticalAlignment="Bottom" Margin="0,10,0,0"/>
+                                </StackPanel>
+                                <CheckBox IsChecked="{Binding Complete}" Foreground="Black" Grid.Column="1"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackPanel>
         </Grid>
     </Grid>

@@ -29,19 +29,19 @@
         <StackPanel x:Name="ContentRoot" Margin="19,9.5,19,0" Grid.Row="1" >
             <StackPanel Orientation="Horizontal" >
                 <TextBlock  Text="Title" Width="Auto" FontFamily="Segoe WP" FontSize="18"/>
-                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbTitle" Text="" FontFamily="Segoe WP" FontSize="18"/>
+                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbTitle" Text="{Binding Title, Mode=OneWay}" FontFamily="Segoe WP" FontSize="18"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock  Text="Description" Width="Auto" FontFamily="Segoe WP" FontSize="18"/>
-                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbDescription" Text="" FontFamily="Segoe WP" FontSize="18"/>
+                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbDescription" Text="{Binding Description, Mode=OneWay }" FontFamily="Segoe WP" FontSize="18"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock  Text="Due Date" Width="Auto" FontFamily="Segoe WP" FontSize="18"/>
-                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbDate" Text="" FontFamily="Segoe WP" FontSize="18"/>
+                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbDate" Text="{Binding DueDate, Mode=OneWay}" FontFamily="Segoe WP" FontSize="18"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock  Text="Complete" Width="Auto" FontFamily="Segoe WP" FontSize="18"/>
-                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbComplete" Text="" FontFamily="Segoe WP" FontSize="18"/>
+                <TextBlock Margin="10,0,0,0" TextWrapping="Wrap" Name="tbComplete" Text="{Binding CompleteText, Mode=OneWay}" FontFamily="Segoe WP" FontSize="18"/>
             </StackPanel>
         </StackPanel>
 

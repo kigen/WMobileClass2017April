@@ -27,6 +27,12 @@ namespace TODO.APP
     {
         private TransitionCollection transitions;
 
+
+        /// <summary>
+        /// Keep a list of tasks. 
+        /// </summary>
+        public List<MyTask> Tasks { get; set; }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -35,6 +41,7 @@ namespace TODO.APP
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+            Tasks = new List<MyTask>();
         }
 
         /// <summary>

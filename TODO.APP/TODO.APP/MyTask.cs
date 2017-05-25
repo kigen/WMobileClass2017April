@@ -12,5 +12,10 @@ namespace TODO.APP
         public string Description { get; set; }
         public string DueDate { get; set; }
         public bool Complete { get; set; }
+
+       public string CompleteText
+       {
+           get { return Complete ? "Complete" : "Incomplete"; }
+       }
     }
 }
