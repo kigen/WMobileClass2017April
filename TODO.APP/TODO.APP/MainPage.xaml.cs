@@ -36,7 +36,9 @@ namespace TODO.APP
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
- 
+            TaskListView.ReorderMode = ListViewReorderMode.Enabled;
+            TaskListView.SelectionMode = ListViewSelectionMode.Single;
+
         }
 
         /// <summary>
@@ -121,16 +123,12 @@ namespace TODO.APP
             Frame.Navigate(typeof (AddTask));
         }
 
-        private void TaskListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-           
-        }
 
         private void TaskListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.OriginalSource != null)
+            if (TaskListView != null && TaskListView.SelectedItem != null)
             {
-                MyTask task = e.OriginalSource as MyTask;
+                MyTask task = TaskListView.SelectedItem as MyTask;
                 //Pass the task object for display in Details Page. 
                 Frame.Navigate(typeof (DetailsPage), task);
             }

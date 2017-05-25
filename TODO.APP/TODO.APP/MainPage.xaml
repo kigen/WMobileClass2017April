@@ -38,7 +38,7 @@
                 <StackPanel.RenderTransform>
                     <CompositeTransform/>
                 </StackPanel.RenderTransform>
-                <ListView Height="503" Name="TaskListView" Foreground="Black" ItemClick="TaskListView_ItemClick" SelectionChanged="TaskListView_SelectionChanged">
+                <ListView Height="503" Name="TaskListView" Foreground="Black" SelectionChanged="TaskListView_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid Width="470" Height="100">
