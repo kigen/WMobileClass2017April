@@ -15,3 +15,8 @@ Should be implemented like any other mobile based calculator:
 
 *Hint:
 Seek inspiration from the android/windows/Phone calculator.
+
+### Submissions. 
+- Create a repo on github 
+- Share your code via this repo and share the repo link. 
+- With your code include a screenshot of the application design. 
