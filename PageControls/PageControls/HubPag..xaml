@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="PageControls.HubPag"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PageControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Hub Header="My Story">
+            <Hub.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Assets/cool.jpg"/>
+            </Hub.Background>
+            <HubSection Header="Chapter 1">
+                <DataTemplate>
+                   <StackPanel>
+                        <TextBlock FontSize="32" Text="This is how my story begins"/>
+
+                    </StackPanel>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Header="Chapter 2">
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="32" Text="This is how my story goes.."/>
+
+                    </StackPanel>
+                </DataTemplate>
+               
+            </HubSection>
+
+            <HubSection Header="Chapter 3">
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="32" Text="This is how my story ends"/>
+                    </StackPanel>
+                </DataTemplate>
+
+            </HubSection>
+        </Hub>
+
+    </Grid>
+</Page>
