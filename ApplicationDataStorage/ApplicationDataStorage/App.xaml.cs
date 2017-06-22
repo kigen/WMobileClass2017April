@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
-namespace TODO.APP
+namespace ApplicationDataStorage
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -26,12 +26,6 @@ namespace TODO.APP
     public sealed partial class App : Application
     {
         private TransitionCollection transitions;
-
-
-        /// <summary>
-        /// Keep a list of tasks. 
-        /// </summary>
-        public List<MyTask> Tasks { get; set; }
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -41,14 +35,6 @@ namespace TODO.APP
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            this.Resuming += App_Resuming;
-            Tasks = new List<MyTask>();
-        }
-
-        void App_Resuming(object sender, object e)
-        {
-              
-            //TODO:: write code to handle any tasks on resuming the app... restore the app state. 
         }
 
         /// <summary>
@@ -141,8 +127,5 @@ namespace TODO.APP
             // TODO: Save application state and stop any background activity
             deferral.Complete();
         }
-
-
-        
     }
 }
